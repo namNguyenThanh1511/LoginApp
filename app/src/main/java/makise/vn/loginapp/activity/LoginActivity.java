@@ -18,7 +18,7 @@ import makise.vn.loginapp.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText etEmailPhone, etPassword;
+    private EditText etUsername, etPassword;
     private Button btnLogin;
     private TextView tvSignUp, tvForgotPassword, tvLanguage;
 
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
-        etEmailPhone = findViewById(R.id.etEmailPhone);
+        etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvSignUp = findViewById(R.id.tvSignUp);
@@ -100,13 +100,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleLogin() {
-        String emailPhone = etEmailPhone.getText().toString().trim();
+        String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
         // Validate inputs
-        if (TextUtils.isEmpty(emailPhone)) {
-            etEmailPhone.setError("Email or phone is required");
-            etEmailPhone.requestFocus();
+        if (TextUtils.isEmpty(username)) {
+            etUsername.setError("Username is required");
+            etUsername.requestFocus();
             return;
         }
 
@@ -127,10 +127,10 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setEnabled(false);
 
         // Simulate login process (replace with actual authentication)
-        simulateLogin(emailPhone, password);
+        simulateLogin(username, password);
     }
 
-    private void simulateLogin(String emailPhone, String password) {
+    private void simulateLogin(String username, String password) {
         // Simulate network delay
         new android.os.Handler().postDelayed(new Runnable() {
             @Override
@@ -140,13 +140,13 @@ public class LoginActivity extends AppCompatActivity {
                 btnLogin.setEnabled(true);
 
                 // For demo purposes, accept any valid input
-                if (isValidEmail(emailPhone) || isValidPhone(emailPhone)) {
+                if (username.equals("admin") && password.equals("123456")) {
                     // Login successful
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
                     // Navigate to main activity
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    intent.putExtra("user_email", emailPhone);
+                    intent.putExtra("user_username", username);
                     startActivity(intent);
                     finish();
                 } else {
@@ -157,14 +157,14 @@ public class LoginActivity extends AppCompatActivity {
         }, 2000); // 2 second delay
     }
 
-    private boolean isValidEmail(String email) {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }
+//    private boolean isValidEmail(String email) {
+//        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+//    }
 
-    private boolean isValidPhone(String phone) {
-        // Simple phone validation (you can enhance this)
-        return phone.matches("^[+]?[0-9]{10,13}$");
-    }
+//    private boolean isValidPhone(String phone) {
+//        // Simple phone validation (you can enhance this)
+//        return phone.matches("^[+]?[0-9]{10,13}$");
+//    }
 
     private void showLanguageDialog() {
         // Create and show language selection dialog
