@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Trạng thái khi focused -->
+    <item android:state_focused="true" android:drawable="@drawable/input_bottom_border_focused" />
+
+    <!-- Trạng thái bình thường -->
+    <item android:drawable="@drawable/input_bottom_border" />
+</selector>

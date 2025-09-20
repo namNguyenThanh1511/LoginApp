@@ -45,28 +45,34 @@
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/input_background"
+            android:background="@drawable/input_bottom_border_selector"
             android:hint="Username"
             android:textColorHint="#B0FFFFFF"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="0dp"
+            android:paddingVertical="16dp"
             android:inputType="text"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="24dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext" />
 
         <!-- Password Input -->
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@drawable/input_background"
+            android:background="@drawable/input_bottom_border_selector"
             android:hint="Password"
             android:textColorHint="#B0FFFFFF"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="0dp"
+            android:paddingVertical="16dp"
             android:inputType="textPassword"
-            android:layout_marginBottom="24dp" />
+            android:layout_marginBottom="32dp"
+            android:singleLine="true"
+            android:imeOptions="actionDone" />
 
         <!-- Login Button -->
         <Button
