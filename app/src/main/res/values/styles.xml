@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#4267B2</item>
+        <item name="colorPrimaryDark">#365899</item>
+        <item name="colorAccent">#4267B2</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!-- Theme for Login Activity without ActionBar -->
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#4267B2</item>
+        <item name="colorPrimaryDark">#365899</item>
+        <item name="colorAccent">#4267B2</item>
+        <item name="android:windowBackground">@drawable/facebook_gradient_bg</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+</resources>
